@@ -1,24 +1,24 @@
+//Lab 7: Implementation of Sum upto nth Natural Number using Recursive Algorithm
 #include<iostream>
 using namespace std;
- long Sum(int n)
+long sum(int n)
 {
     if(n==1)
-    {
         return 1;
-        
-    }
     else
-    {
-        return n+Sum(n-1);    
-    }
+        return n+sum(n-1);    
 }
 int main()
 {
- long n ,result;
-cout<<"Enter any Number ";
-cin>>n;
-result = Sum(n);
-cout<<"Sum of "<<n<<" is "<<result;
-    
+	long n,result;
+	cout<<"Enter a natural number : ";
+	cin>>n;
+	if(n<=0)
+	{
+		cout<<"Invalid input. Please enter a natural number.";
+		return 0;
+	}
+	result = sum(n);
+	cout<<"Sum of Natural Numbers upto "<<n<<" = "<<result;
     return 0;
 }

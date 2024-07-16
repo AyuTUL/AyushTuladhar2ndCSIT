@@ -13,9 +13,8 @@ int gcdExtended(int a, int b, int *x, int *y){
     *y=x1;
     return gcd;
 }
-
-
-int main(){
+int main()
+{
     int x,y,a=35,b=15;
     int g=gcdExtended(a,b,&x,&y);
     cout<<("%d",g);
