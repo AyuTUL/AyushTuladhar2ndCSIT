@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-
+int p[5][5];
 void read(int r,int c,int m[][5])
 {
 	int i,j;
@@ -25,15 +25,15 @@ void prod(int r1,int c2,int c1,int m1[][5],int m2[][5])
 	{
 		for(j=0;j<c2;j++)
 		{
+			p[i][j]=0;
 			for(k=0;k<c1;k++)
-				p[i][j]+=m1[i][k]*m2[j][k];
+				p[i][j]+=m1[i][k]*m2[k][j];
 		}
 	}
 }
-
 int main()
 {
-	int r1,c1,r2,c2,p[5][5], m1[5][5],m2[5][5];
+	int r1,c1,r2,c2, m1[5][5],m2[5][5];
 	cout<<"Enter order of Matrix A : ";
 	cin>>r1>>c1;
 	cout<<"Enter order of Matrix B: ";
