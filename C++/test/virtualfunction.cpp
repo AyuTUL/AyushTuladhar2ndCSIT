@@ -13,6 +13,10 @@ class Shape
 		x=a;
 		y=b;
 	}
+	Shape(int a)
+	{
+		x=a;
+	}
 	virtual int area()
 	{
 		return 0;
@@ -41,19 +45,18 @@ class Square:public Shape
 		{
 			
 		}
-		Square(int a,int b):Shape(a,b)
+		Square(int a):Shape(a)
 		{
 			
 		}
 		int area()
 		{
-			return x*y; 
+			return x*x; 
 		}
 };
 class Triangle:public Shape
 {
 	public:
-		int z;
 		Triangle():Shape()
 		{
 			
@@ -76,7 +79,7 @@ int main()
 	Triangle t(10,6);
 	s=&t;
 	cout<<"Area of Triangle = "<<s->area()<<endl;
-	Square sq(10,10);
+	Square sq(10);
 	s=&sq;
 	cout<<"Area of Square = "<<s->area();
 	return 0;
