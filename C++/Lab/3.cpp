@@ -10,6 +10,6 @@ int main()
 	a=PI*r*r;
 	c=2*PI*r;
 	cout<<"Area of Circle = "<<a;
-	cout<<endl<<"Circumference = "<<c;
+	cout<<endl<<"Circumference of Circle = "<<c;
 	return 0;
 }
