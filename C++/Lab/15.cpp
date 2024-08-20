@@ -41,8 +41,10 @@ int main()
 	char c;
 	do
 	{
-		cout<<"1. Input\n2. Addition\n3. Multiplication\n4. Exit\nEnter your choice : ";
+		system("cls");
+		cout<<"1. Input Matrix\n2. Addition\n3. Multiplication\n4. Exit\nEnter your choice : ";
 		cin>>ch;
+		system("cls");
 		switch(ch)
 		{
 			case 1:
@@ -66,6 +68,10 @@ int main()
 					break;
 				}
 				sum(a,b);
+				cout<<"Matrix A : "<<endl;
+				show(a,m1,n1);
+				cout<<"Matrix B : "<<endl;
+				show(b,m2,n2);
 				cout<<"Matrix A + Matrix B : "<<endl;
 				show(s,m1,n1);
 				break;
@@ -76,6 +82,10 @@ int main()
 					break;
 				}
 				prod(a,b);
+				cout<<"Matrix A : "<<endl;
+				show(a,m1,n1);
+				cout<<"Matrix B : "<<endl;
+				show(b,m2,n2);
 				cout<<"Matrix A x Matrix B : "<<endl;
 				show(p,m1,n2);
 				break;
