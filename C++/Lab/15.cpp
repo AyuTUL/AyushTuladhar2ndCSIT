@@ -48,7 +48,7 @@ int main()
 			case 1:
 				cout<<"Enter order of Matrix A : ";
 				cin>>m1>>n1;
-				cout<<"Enter order of Matrix b : ";
+				cout<<"Enter order of Matrix B : ";
 				cin>>m2>>n2;
 				cout<<"Enter elements of Matrix A (="<<m1*n1<<") : ";
 				read(a,m1,n1);
