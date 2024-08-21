@@ -31,8 +31,9 @@ int main()
 	int a,b,c;
 	cout<<"Enter 3 integers : ";
 	cin>>a>>b>>c;
-	cout<<"Sum of "<<a<<" , "<<b<<" & "<<c<<" = "<<sum(a,b,c)<<endl;
-	cout<<"Average of "<<a<<" , "<<b<<" & "<<c<<" = "<<avg(a,b,c)<<endl;
-	cout<<"Largest among "<<a<<" , "<<b<<" & "<<c<<" = "<<large(a,b,c)<<endl;
-	cout<<"Smallest among "<<a<<" , "<<b<<" & "<<c<<" = "<<small(a,b,c);
+	cout<<"Sum of "<<a<<" , "<<b<<" , "<<c<<" = "<<sum(a,b,c)<<endl;
+	cout<<"Average of "<<a<<" , "<<b<<" , "<<c<<" = "<<avg(a,b,c)<<endl;
+	cout<<"Largest among "<<a<<" , "<<b<<" , "<<c<<" = "<<large(a,b,c)<<endl;
+	cout<<"Smallest among "<<a<<" , "<<b<<" , "<<c<<" = "<<small(a,b,c);
+	return 0;
 }
