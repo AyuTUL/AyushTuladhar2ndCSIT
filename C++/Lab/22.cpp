@@ -25,7 +25,7 @@ int main()
 	s1.read();
 	s2.read();
 	s3.read();
-	cout<<"Stundent Details : ";
+	cout<<"Student Details : ";
 	s1.show();
 	s2.show();
 	s3.show();

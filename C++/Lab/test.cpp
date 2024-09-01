@@ -1,114 +1,61 @@
-#include <iostream>
-#define M 5
-#define N 5
+#include<iostream>
 using namespace std;
 
-int a[M][N], b[M][N], s[M][N], p[M][N];
-int m1, n1, m2, n2;
+#define N 3
 
-void input();
-void read(int m[][N], int r, int c);
-void sum(int a[][N], int b[][N]);
-void prod(int a[][N], int b[][N]);
-void show(int m[][N], int r, int c);
-
-void input()
+class Distance
 {
-    cout << "Enter elements of Matrix A (=" << m1 * n1 << "):\n";
-    read(a, m1, n1);
-    cout << "Enter elements of Matrix B (=" << m2 * n2 << "):\n";
-    read(b, m2, n2);
-    cout << "Matrix A:\n";
-    show(a, m1, n1);
-    cout << "Matrix B:\n";
-    show(b, m2, n2);
-}
+    private:
+        int m, cm;
 
-void read(int m[][N], int r, int c)
-{
-    for (int i = 0; i < r; i++)
-        for (int j = 0; j < c; j++)
-            cin >> m[i][j];
-}
+    public:
+        void read()
+        {
+            cin >> m >> cm;
+        }
 
-void sum(int a[][N], int b[][N])
-{
-    for (int i = 0; i < m1; i++)
-        for (int j = 0; j < n1; j++)
-            s[i][j] = a[i][j] + b[i][j];
-}
+        Distance calcAvg(Distance d[])
+        {
+            Distance total;
+            total.m = 0;
+            total.cm = 0;
 
-void prod(int a[][N], int b[][N])
-{
-    // Initialize the product matrix to zero
-    for (int i = 0; i < m1; i++)
-        for (int j = 0; j < n2; j++)
-            p[i][j] = 0;
+            for (int i = 0; i < N; i++)
+            {
+                total.m += d[i].m;
+                total.cm += d[i].cm;
+            }
 
-    // Matrix multiplication
-    for (int i = 0; i < m1; i++)
-        for (int j = 0; j < n2; j++)
-            for (int k = 0; k < n1; k++)
-                p[i][j] += a[i][k] * b[k][j];
-}
+            total.m += total.cm / 100;
+            total.cm = total.cm % 100;
 
-void show(int m[][N], int r, int c)
-{
-    for (int i = 0; i < r; i++)
-    {
-        for (int j = 0; j < c; j++)
-            cout << m[i][j] << "\t";
-        cout << endl;
-    }
-}
+            // Calculate average
+            total.m /= N;
+            total.cm /= N;
+
+            return total;
+        }
+
+        void show()
+        {
+            cout << m << " m and " << cm << " cm" << endl;
+        }
+};
 
 int main()
 {
-    int ch;
-    char c;
-    do
+    Distance d[N], avg;
+    cout << "Enter distance in meters & centimeters:\n";
+    for (int i = 0; i < N; i++)
     {
-        cout << "Enter order of matrix A: ";
-        cin >> m1 >> n1;
-        cout << "Enter order of matrix B: ";
-        cin >> m2 >> n2;
-        cout << "1. Addition\n2. Multiplication\nEnter your choice: ";
-        cin >> ch;
+        cout << "Enter distance " << i + 1 << " : ";
+        d[i].read();
+    }
 
-        switch (ch)
-        {
-            case 1:
-                if (m1 != m2 || n1 != n2)
-                {
-                    cout << "Matrix addition is undefined.\n";
-                    break;
-                }
-                input();
-                sum(a, b);
-                cout << "Matrix A + Matrix B:\n";
-                show(s, m1, n1);
-                break;
-
-            case 2:
-                if (n1 != m2)
-                {
-                    cout << "Matrix multiplication is undefined.\n";
-                    break;
-                }
-                input();
-                prod(a, b);
-                cout << "Matrix A x Matrix B:\n";
-                show(p, m1, n2);
-                break;
-
-            default:
-                cout << "Invalid choice.\n";
-                break;
-        }
-
-        cout << "Do you want to continue? (Y/N): ";
-        cin >> c;
-    } while (c == 'y' || c == 'Y');
+    avg = avg.calcAvg(d); // Calculate the average of distances
+    cout << "Average Distance = ";
+    avg.show(); // Display the average distance
 
     return 0;
 }
+
