@@ -17,9 +17,5 @@ int main()
 	{
 		cout<<"Error: Division by "<<e<<endl;
 	}
-	catch(...)
-	{
-		cout<<"Error: Unknown"<<endl;
-	}
 	return 0;
 }
