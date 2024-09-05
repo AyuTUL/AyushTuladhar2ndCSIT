@@ -9,9 +9,14 @@ class String
 	public:
 		String()
 		{
-			length=1;
-			name=new char(length);
-			strcpy(name," ");
+			length=0;
+			name=new char(length+1);
+			strcpy(name, " ");
+		}
+		~String()
+		{
+			cout<<name<<" Memory freed."<<endl;
+			delete[] name;
 		}
 		String(char *n)
 		{
