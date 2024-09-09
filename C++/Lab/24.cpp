@@ -11,11 +11,9 @@ class String
 		{
 			length=0;
 			name=new char(length+1);
-			strcpy(name, " ");
 		}
 		~String()
 		{
-			cout<<name<<" Memory freed."<<endl;
 			delete[] name;
 		}
 		String(char *n)
@@ -24,7 +22,7 @@ class String
 			name=new char(length+1);
 			strcpy(name,n);
 		}
-		String join(String s)
+		String join(String &s)
 		{
 			String temp;
 			temp.length=length+s.length;

@@ -31,10 +31,16 @@ void read(T a[])
 int main()
 {
 	int a[N];
-	cout<<"Enter 10 integers : ";
+	cout<<"Enter "<<N<<" integers : ";
 	read(a);
 	sort(a);
-	cout<<"Sorted Array :"<<endl;
+	cout<<"Sorted array of integers :"<<endl;
 	show(a);
+	double b[N];
+	cout<<endl<<"Enter "<<N<<" real numbers : ";
+	read(b);
+	sort(b);
+	cout<<"Sorted array of real numbers :"<<endl;
+	show(b);
 	return 0;
 }

@@ -30,6 +30,9 @@ int main()
 	cout<<"Calling derived functions : "<<endl;
 	d.show();
 	d.display();
+	cout<<"Calling base function through derived object : "<<endl;
+	d.Base::show();
+	d.Base::display();
 	return 0;
 }
 

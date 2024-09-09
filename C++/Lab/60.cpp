@@ -152,6 +152,5 @@ int main()
 		default:
 			cout<<"Invalid input. Choose from 1-3.";
 	}	
-
 	return 0;
 }
