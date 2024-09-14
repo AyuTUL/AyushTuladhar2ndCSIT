@@ -28,7 +28,6 @@ class Box
 			cout<<"Width = "<<width<<endl<<"Height = "<<height<<endl<<"Depth = "<<depth<<endl;
 			cout<<"Area = "<<getArea()<<endl;
 			cout<<"Volume = "<<getVolume();
-			
 		}
 };
 int main()

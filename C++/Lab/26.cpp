@@ -12,12 +12,12 @@ class USMoney
 		}
 		USMoney plus(USMoney m)
 		{
-			this->dollar+=m.dollar;
-			this->cents+=m.cents;
-			if(this->cents>99)
+			dollar+=m.dollar;
+			cents+=m.cents;
+			if(cents>99)
 			{
-				this->dollar+=this->cents/100;
-				this->cents=this->cents%100;
+				dollar+=cents/100;
+				cents=cents%100;
 			}
 			return(*this);
 		}

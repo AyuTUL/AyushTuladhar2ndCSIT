@@ -20,7 +20,6 @@ class String
 		}
 		void read(char *s)
 		{
-			delete[] str;
 			len=strlen(s);
 			str=new char(len+1);
 			strcpy(str,s);

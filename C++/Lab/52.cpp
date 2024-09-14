@@ -35,7 +35,7 @@ class KRW
 		KRW(NPR n)
 		{
 			double npr=n.getRs();
-			won=npr*10.0;
+			won=npr*9.89;
 		}
 };
 int main()

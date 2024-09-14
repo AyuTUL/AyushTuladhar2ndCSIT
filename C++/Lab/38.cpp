@@ -8,7 +8,7 @@ class Complex
 	public:
 		void read()
 		{
-			cout<<"Enter real & complex part of complex number : ";
+			cout<<"Enter real & imaginary part : ";
 			cin>>real>>img;
 		}
 		void show()

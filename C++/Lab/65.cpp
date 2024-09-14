@@ -35,7 +35,7 @@ int main()
 	}
 	cout<<"Enter no. of employee records : ";
 	cin>>n;
-	cout<<"Enter records for "<<n<<" employees : "<<endl;
+	cout<<endl<<"Enter records for "<<n<<" employees : "<<endl;
 	for(int i=1;i<=n;i++)
 	{
 		e1.read();

@@ -3,7 +3,7 @@ using namespace std;
 int main()
 {
 	int ch;
-	cout<<"1. Integer\n2. Float\n3. String\nChoose exception to throw : ";
+	cout<<"1. Integer\n2. Float\n3. Character\nChoose exception to throw : ";
 	cin>>ch;
 	try
 	{

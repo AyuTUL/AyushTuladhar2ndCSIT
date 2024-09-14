@@ -7,7 +7,7 @@ class Time
 	public:
 		void read()
 		{
-			cout<<"Enter time in hr, min & sec : ";
+			cout<<"Enter hr, min & sec : ";
 			cin>>hr>>min>>sec;
 		}
 		void show()

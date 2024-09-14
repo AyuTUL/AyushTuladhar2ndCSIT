@@ -60,4 +60,5 @@ int main()
 	cout<<endl<<"Details of Staff Coordinator :"<<endl;
 	c2.Staff::display();
 	c2.display();
+	return 0;
 }

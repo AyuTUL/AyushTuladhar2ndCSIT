@@ -16,7 +16,7 @@ int main()
 				throw(3.141);
 				break;
 			case 3:
-				throw('!');
+				throw("guapo");
 				break;
 			default:
 				throw("unknown");

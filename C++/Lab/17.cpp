@@ -1,4 +1,3 @@
-//c lab 3 report 30
 #include<iostream>
 using namespace std;
 double power(double m,int n=2)
@@ -23,4 +22,5 @@ int main()
 	cout<<"Enter base : ";
 	cin>>m;
 	cout<<m<<" raised to the power 2 = "<<power(m)<<endl;
+	return 0;
 }

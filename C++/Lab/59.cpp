@@ -37,7 +37,7 @@ int main()
 	cout<<"Sorted array of integers :"<<endl;
 	show(a);
 	double b[N];
-	cout<<endl<<"Enter "<<N<<" real numbers : ";
+	cout<<endl<<endl<<"Enter "<<N<<" real numbers : ";
 	read(b);
 	sort(b);
 	cout<<"Sorted array of real numbers :"<<endl;

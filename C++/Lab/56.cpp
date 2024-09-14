@@ -17,5 +17,6 @@ int main()
 	{
 		cout<<"Error: Division by "<<e<<endl;
 	}
+	cout<<"End of Program";
 	return 0;
 }

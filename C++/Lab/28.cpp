@@ -16,7 +16,7 @@ class Room
 		void output()
 		{
 			cout<<"Length = "<<length<<endl<<"Breadth = "<<breadth<<endl;
-			cout<<"Area = "<<this->getArea()<<endl;
+			cout<<"Area = "<<getArea()<<endl;
 		}
 };
 class MyRoom: public Room
@@ -36,7 +36,7 @@ class MyRoom: public Room
 		{
 			cout<<"Height = "<<height<<endl;
 			Room::output();
-			cout<<"Volume = "<<this->getVolume()<<endl;
+			cout<<"Volume = "<<getVolume()<<endl;
 		}
 };
 int main()
