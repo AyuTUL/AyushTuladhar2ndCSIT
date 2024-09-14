@@ -1,156 +1,166 @@
 #include<iostream>
-#define N 5
 using namespace std;
-bool pushConfirm()
-{
-	if(fullFlag)
-	{
-		cout<<endl<<"Stack is full"<<endl;
-		return(false);
-	}
-	char c;
-	cout<<endl<<"Do you want to push an item (Y/N) ? : ";
-	cin>>c;
-	if(c=='Y' || c=='y')
-		return(true);
-	else
-		return(false);
-}
-bool popConfirm()
-{
-	if(emptyFlag)
-	{
-		cout<<"Stack is empty";
-		return(false);
-	}
-	char c;
-	cout<<"Do you want to pop an item (Y/N) ? : ";
-	cin>>c;
-	if(c=='Y' || c=='y')
-		return(true);
-	else
-		return(false);
-}
 template<class T>
 class Stack
 {
 	private:
-		T stk[N];
-		int top;
-		bool fullFlag=false,emptyFlag=false;
+		T* stk;
+		int top,n;
+		bool fullFlag=false,emptyFlag=true;
 	public:
 		Stack()
 		{
-			top=0;
+			top=-1;
+			cout<<"Enter stack size : ";
+			cin>>n;
+			stk=new T(n);
+		}
+		~Stack()
+		{
+			delete[] stk;
+		}
+		int getSize()
+		{
+			return(n);
 		}
 		void push(T item)
 		{
-			if(top==N-1)
+			emptyFlag=false;
+			stk[++top]=item;
+			cout<<item<<" has been pushed"<<endl;	
+			if(top==n-1)
 				fullFlag=true;
-			else
-			{	
-				stk[top]=item;
-				top++;
-			}
 		}
 		T pop()
 		{
+			fullFlag=false;
 			T temp;
-			try
-			{
+			temp=stk[top];
+			top--;
 			if(top==-1)
-				throw top;
-			}
-			catch(int top)
-			{
-				cout<<"Stack is empty"<<endl;
-				return 0;
-			}
-				temp=stk[top];
-				stk[top]=0;
-				top--;
-			
-			return temp;
+				emptyFlag=true;
+			return(temp);
 		}
 		void viewStack()
 		{
-			cout<<"Stack :"<<endl;
+			cout<<endl<<"Stack :"<<endl;
 			for(int i=top;i>=0;i--)
 				cout<<stk[i]<<endl;
 		}
-		bool isFull() const
-    {
-        return fullFlag;
-    }
-
-    bool isEmpty() const
-    {
-        return emptyFlag;
-    }
+		bool pushConfirm()
+		{
+			if(fullFlag)
+			{
+				cout<<endl<<"Stack is full"<<endl;
+				return(false);
+			}
+			char c;
+			cout<<endl<<"Do you want to push an item (Y/N) ? : ";
+			cin>>c;
+			if(c=='Y' || c=='y')
+				return(true);
+			else
+				return(false);
+		}
+		bool popConfirm()
+		{
+			if(emptyFlag)
+			{
+				cout<<endl<<"Stack is empty"<<endl;
+				return(false);
+			}
+			char c;
+			cout<<endl<<"Do you want to pop an item (Y/N) ? : ";
+			cin>>c;
+			if(c=='Y' || c=='y')
+				return(true);
+			else
+				return(false);
+		}
+		bool isFull() 
+	    {
+	        return fullFlag;
+	    }
+	    bool isEmpty() 
+	    {
+	        return emptyFlag;
+	    }
 };
 int main()
 {
+	char c;
 	int ch,i;
-	cout<<"1. Integer\n2. Double\n3. Character\nChoose stack type : ";
-	cin>>ch;
-	switch(ch)
+	do
 	{
-		case 1:
+		system("cls");
+		cout<<"1. Integer\n2. Double\n3. Character\nChoose stack type : ";
+		cin>>ch;
+		system("cls");
+		try{
+		switch(ch)
+		{
+			case 1:
 			{
-			
-			int a[N];
-			Stack <int>s1;
-			cout<<"Enter "<<N<<" integers : ";
-			for(i=0;i<N;i++)
-			{
-				cin>>a[i];
+				int a[100];
+				Stack <int>s1;
+				cout<<"Enter "<<s1.getSize()<<" integers : ";
+				for(i=0;i<s1.getSize();i++)
+					cin>>a[i];
+				i=-1;
+				while(s1.pushConfirm())
+					s1.push(a[++i]);
+				s1.viewStack();
+				while(s1.popConfirm())
+					cout<<"Popped item = "<<s1.pop()<<endl;
+				if(!s1.isEmpty())
+				s1.viewStack();
+				break;
 			}
-			--i;
-			while(pushConfirm())
-			{
-				cout<<"i="<<i<<endl<<a[i];
-				s1.push(a[i]);
-				cout<<endl<<a[i]<<" has been pushed";
-				--i;
-			}
-			
-			s1.viewStack();
-			while(popConfirm())
-			{
-				cout<<endl<<"Popped Item = "<<s1.pop()<<endl;
-			}
-			break;
-		}
-		case 2:
+			case 2:
 			{			
-			double b[N];
-			Stack <double>s2;
-			cout<<"Enter "<<N<<" numbers : ";
-			for(i=0;i<N;i++)
-			{
-				cin>>b[i];
-				s2.push(b[i]);
+				double b[100];
+				Stack <double>s2;
+				cout<<"Enter "<<s2.getSize()<<" numbers : ";
+				for(i=0;i<s2.getSize();i++)
+					cin>>b[i];
+				i=-1;
+				while(s2.pushConfirm())
+					s2.push(b[++i]);
+				s2.viewStack();
+				while(s2.popConfirm())
+					cout<<"Popped item = "<<s2.pop()<<endl;
+				if(!s2.isEmpty())
+				s2.viewStack();
+				break;
 			}
-			s2.viewStack();
-			cout<<endl<<"Popped Item = "<<s2.pop()<<endl;
-			break;
-		}
-		case 3:
+			case 3:
 			{
-			char c[N];
-			Stack <char>s3;
-			cout<<"Enter "<<N<<" characters : ";
-			for(i=0;i<N;i++)
-			{
-				cin>>c[i];
-				s3.push(c[i]);
+				char c[100];
+				Stack <char>s3;
+				cout<<"Enter "<<s3.getSize()<<" integers : ";
+				for(i=0;i<s3.getSize();i++)
+					cin>>c[i];
+				i=-1;
+				while(s3.pushConfirm())
+					s3.push(c[++i]);
+				s3.viewStack();
+				while(s3.popConfirm())
+					cout<<"Popped item = "<<s3.pop()<<endl;
+				if(!s3.isEmpty())
+				s3.viewStack();
+				break;
 			}
-			s3.viewStack();
-			cout<<endl<<"Popped Item = "<<s3.pop()<<endl;
-			break;
-		}
-		default:
+			default:
+				throw(ch);
+				
+		}	}
+		catch(...)
+		{
 			cout<<"Invalid input. Choose from 1-3.";
-	}	
+		}
+		cout<<"\nTry another? (Y/N) : ";
+		fflush(stdin);
+		cin>>c;
+	}while(c=='y' || c=='Y');
 	return 0;
 }
