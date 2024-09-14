@@ -47,14 +47,6 @@ class DM
 			cout<<"Enter distance in meters & centimeters : ";
 			cin>>m>>cm;
 		}
-		int getMeter()
-		{
-			return(m);
-		}
-		int getCenti()
-		{
-			return(cm);
-		}
 		DM(DB d)
 		{
 			int totalCm=(d.getFeet()*12+d.getInch())*2.54;
