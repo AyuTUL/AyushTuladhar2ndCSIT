@@ -54,10 +54,6 @@ class Stack
 	        cin>>c;
         	return(c=='Y' || c=='y');
     	}
-		bool isFull() 
-	    {
-	        return fullFlag;
-	    }
 	    bool isEmpty() 
 	    {
 	        return emptyFlag;

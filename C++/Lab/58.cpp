@@ -24,19 +24,19 @@ int main()
 	}
 	catch(int e)
 	{
-		cout<<"Integer exception caught : "<<e<<endl;
+		cout<<"Integer exception caught : "<<e;
 	}
 	catch(double e)
 	{
-		cout<<"Float exception caught : "<<e<<endl;
+		cout<<"Float exception caught : "<<e;
 	}
 	catch(char e)
 	{
-		cout<<"Character exception caught : "<<e<<endl;
+		cout<<"Character exception caught : "<<e;
 	}
 	catch(...)
 	{
-		cout<<"Unknown exception caught"<<endl;
+		cout<<"Unknown exception caught";
 	}
 	return 0;
 }
