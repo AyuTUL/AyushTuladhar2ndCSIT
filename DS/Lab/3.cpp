@@ -68,7 +68,7 @@ int main()
 	char c;
 	cout<<"For boolean matrix A :"<<endl;
 	a.read();
-	cout<<endl<<"For boolean matrix B :"<<endl;
+	cout<<"For boolean matrix B :"<<endl;
 	b.read();
 	a.check(b);
 	do
