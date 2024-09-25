@@ -48,7 +48,7 @@ class Shipment: public BoxWeight
 };
 int main()
 {
-	Shipment s(5,3,6,80.69,150032.6312);
+	Shipment s(5,3,6,80.69,1532.632);
 	s.getCost();
 	return 0;
 }
